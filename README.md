@@ -1,2 +1,2 @@
 # Popina_Theme
-Thème wordpresse du site web Popina
+Thème wordpress du site web Popina
