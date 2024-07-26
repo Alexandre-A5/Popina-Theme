@@ -16,275 +16,6 @@ add_theme_support('menus');
         )
     );
 
-
-    function cptui_register_my_cpts() {
-
-        /**
-         * Post Type: Menus phares.
-         */
-    
-        $labels = [
-            "name" => esc_html__( "Menus phares", "custom-post-type-ui" ),
-            "singular_name" => esc_html__( "Menu phare", "custom-post-type-ui" ),
-            "menu_name" => esc_html__( "Menus phares", "custom-post-type-ui" ),
-            "all_items" => esc_html__( "Tous les Menus phares", "custom-post-type-ui" ),
-            "add_new" => esc_html__( "Ajouter un nouveau", "custom-post-type-ui" ),
-            "add_new_item" => esc_html__( "Ajouter un nouveau Menu phare", "custom-post-type-ui" ),
-            "edit_item" => esc_html__( "Modifier Menu phare", "custom-post-type-ui" ),
-            "new_item" => esc_html__( "Nouveau Menu phare", "custom-post-type-ui" ),
-            "view_item" => esc_html__( "Voir Menu phare", "custom-post-type-ui" ),
-            "view_items" => esc_html__( "Voir Menus phares", "custom-post-type-ui" ),
-            "search_items" => esc_html__( "Recherche de Menus phares", "custom-post-type-ui" ),
-            "not_found" => esc_html__( "Aucun Menus phares trouvé", "custom-post-type-ui" ),
-            "not_found_in_trash" => esc_html__( "Aucun Menus phares trouvé dans la corbeille", "custom-post-type-ui" ),
-            "parent" => esc_html__( "Menu phare parent :", "custom-post-type-ui" ),
-            "featured_image" => esc_html__( "Image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
-            "set_featured_image" => esc_html__( "Définir l’image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
-            "remove_featured_image" => esc_html__( "Retirer l’image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
-            "use_featured_image" => esc_html__( "Utiliser comme image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
-            "archives" => esc_html__( "Archives de Menu phare", "custom-post-type-ui" ),
-            "insert_into_item" => esc_html__( "Insérer dans Menu phare", "custom-post-type-ui" ),
-            "uploaded_to_this_item" => esc_html__( "Téléverser sur ce Menu phare", "custom-post-type-ui" ),
-            "filter_items_list" => esc_html__( "Filtrer la liste de Menus phares", "custom-post-type-ui" ),
-            "items_list_navigation" => esc_html__( "Navigation de liste de Menus phares", "custom-post-type-ui" ),
-            "items_list" => esc_html__( "Liste de Menus phares", "custom-post-type-ui" ),
-            "attributes" => esc_html__( "Attributs de Menus phares", "custom-post-type-ui" ),
-            "name_admin_bar" => esc_html__( "Menu phare", "custom-post-type-ui" ),
-            "item_published" => esc_html__( "Menu phare publié", "custom-post-type-ui" ),
-            "item_published_privately" => esc_html__( "Menu phare publié en privé.", "custom-post-type-ui" ),
-            "item_reverted_to_draft" => esc_html__( "Menu phare repassé en brouillon.", "custom-post-type-ui" ),
-            "item_trashed" => esc_html__( "Menu phare mis à la corbeille.", "custom-post-type-ui" ),
-            "item_scheduled" => esc_html__( "Menu phare planifié", "custom-post-type-ui" ),
-            "item_updated" => esc_html__( "Menu phare mis à jour.", "custom-post-type-ui" ),
-            "parent_item_colon" => esc_html__( "Menu phare parent :", "custom-post-type-ui" ),
-        ];
-    
-        $args = [
-            "label" => esc_html__( "Menus phares", "custom-post-type-ui" ),
-            "labels" => $labels,
-            "description" => "",
-            "public" => true,
-            "publicly_queryable" => true,
-            "show_ui" => true,
-            "show_in_rest" => true,
-            "rest_base" => "",
-            "rest_controller_class" => "WP_REST_Posts_Controller",
-            "rest_namespace" => "wp/v2",
-            "has_archive" => false,
-            "show_in_menu" => true,
-            "show_in_nav_menus" => true,
-            "delete_with_user" => false,
-            "exclude_from_search" => false,
-            "capability_type" => "post",
-            "map_meta_cap" => true,
-            "hierarchical" => false,
-            "can_export" => false,
-            "rewrite" => [ "slug" => "menu_phare", "with_front" => true ],
-            "query_var" => true,
-            "supports" => [ "title" ],
-            "show_in_graphql" => false,
-        ];
-    
-        register_post_type( "menu_phare", $args );
-    }
-    
-    add_action( 'init', 'cptui_register_my_cpts' );
-
-    
-    function cptui_register_my_cpts_menu_phare() {
-
-        /**
-         * Post Type: Menus phares.
-         */
-    
-        $labels = [
-            "name" => esc_html__( "Menus phares", "custom-post-type-ui" ),
-            "singular_name" => esc_html__( "Menu phare", "custom-post-type-ui" ),
-            "menu_name" => esc_html__( "Menus phares", "custom-post-type-ui" ),
-            "all_items" => esc_html__( "Tous les Menus phares", "custom-post-type-ui" ),
-            "add_new" => esc_html__( "Ajouter un nouveau", "custom-post-type-ui" ),
-            "add_new_item" => esc_html__( "Ajouter un nouveau Menu phare", "custom-post-type-ui" ),
-            "edit_item" => esc_html__( "Modifier Menu phare", "custom-post-type-ui" ),
-            "new_item" => esc_html__( "Nouveau Menu phare", "custom-post-type-ui" ),
-            "view_item" => esc_html__( "Voir Menu phare", "custom-post-type-ui" ),
-            "view_items" => esc_html__( "Voir Menus phares", "custom-post-type-ui" ),
-            "search_items" => esc_html__( "Recherche de Menus phares", "custom-post-type-ui" ),
-            "not_found" => esc_html__( "Aucun Menus phares trouvé", "custom-post-type-ui" ),
-            "not_found_in_trash" => esc_html__( "Aucun Menus phares trouvé dans la corbeille", "custom-post-type-ui" ),
-            "parent" => esc_html__( "Menu phare parent :", "custom-post-type-ui" ),
-            "featured_image" => esc_html__( "Image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
-            "set_featured_image" => esc_html__( "Définir l’image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
-            "remove_featured_image" => esc_html__( "Retirer l’image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
-            "use_featured_image" => esc_html__( "Utiliser comme image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
-            "archives" => esc_html__( "Archives de Menu phare", "custom-post-type-ui" ),
-            "insert_into_item" => esc_html__( "Insérer dans Menu phare", "custom-post-type-ui" ),
-            "uploaded_to_this_item" => esc_html__( "Téléverser sur ce Menu phare", "custom-post-type-ui" ),
-            "filter_items_list" => esc_html__( "Filtrer la liste de Menus phares", "custom-post-type-ui" ),
-            "items_list_navigation" => esc_html__( "Navigation de liste de Menus phares", "custom-post-type-ui" ),
-            "items_list" => esc_html__( "Liste de Menus phares", "custom-post-type-ui" ),
-            "attributes" => esc_html__( "Attributs de Menus phares", "custom-post-type-ui" ),
-            "name_admin_bar" => esc_html__( "Menu phare", "custom-post-type-ui" ),
-            "item_published" => esc_html__( "Menu phare publié", "custom-post-type-ui" ),
-            "item_published_privately" => esc_html__( "Menu phare publié en privé.", "custom-post-type-ui" ),
-            "item_reverted_to_draft" => esc_html__( "Menu phare repassé en brouillon.", "custom-post-type-ui" ),
-            "item_trashed" => esc_html__( "Menu phare mis à la corbeille.", "custom-post-type-ui" ),
-            "item_scheduled" => esc_html__( "Menu phare planifié", "custom-post-type-ui" ),
-            "item_updated" => esc_html__( "Menu phare mis à jour.", "custom-post-type-ui" ),
-            "parent_item_colon" => esc_html__( "Menu phare parent :", "custom-post-type-ui" ),
-        ];
-    
-        $args = [
-            "label" => esc_html__( "Menus phares", "custom-post-type-ui" ),
-            "labels" => $labels,
-            "description" => "",
-            "public" => true,
-            "publicly_queryable" => true,
-            "show_ui" => true,
-            "show_in_rest" => true,
-            "rest_base" => "",
-            "rest_controller_class" => "WP_REST_Posts_Controller",
-            "rest_namespace" => "wp/v2",
-            "has_archive" => false,
-            "show_in_menu" => true,
-            "show_in_nav_menus" => true,
-            "delete_with_user" => false,
-            "exclude_from_search" => false,
-            "capability_type" => "post",
-            "map_meta_cap" => true,
-            "hierarchical" => false,
-            "can_export" => false,
-            "rewrite" => [ "slug" => "menu_phare", "with_front" => true ],
-            "query_var" => true,
-            "supports" => [ "title" ],
-            "show_in_graphql" => false,
-        ];
-    
-        register_post_type( "menu_phare", $args );
-    }
-    
-    add_action( 'init', 'cptui_register_my_cpts_menu_phare' );
-
-    function cptui_register_my_taxes() {
-
-        /**
-         * Taxonomy: pays.
-         */
-    
-        $labels = [
-            "name" => esc_html__( "pays", "custom-post-type-ui" ),
-            "singular_name" => esc_html__( "pays", "custom-post-type-ui" ),
-            "menu_name" => esc_html__( "pays", "custom-post-type-ui" ),
-            "all_items" => esc_html__( "Tous les pays", "custom-post-type-ui" ),
-            "edit_item" => esc_html__( "Modifier pays", "custom-post-type-ui" ),
-            "view_item" => esc_html__( "Voir pays", "custom-post-type-ui" ),
-            "update_item" => esc_html__( "Mettre à jour le nom de pays", "custom-post-type-ui" ),
-            "add_new_item" => esc_html__( "Ajouter un nouveau pays", "custom-post-type-ui" ),
-            "new_item_name" => esc_html__( "Nom du nouveau pays", "custom-post-type-ui" ),
-            "parent_item" => esc_html__( "Parent dpays", "custom-post-type-ui" ),
-            "parent_item_colon" => esc_html__( "pays parent :", "custom-post-type-ui" ),
-            "search_items" => esc_html__( "Recherche de pays", "custom-post-type-ui" ),
-            "popular_items" => esc_html__( "pays populaires", "custom-post-type-ui" ),
-            "separate_items_with_commas" => esc_html__( "Séparer les pays avec des virgules", "custom-post-type-ui" ),
-            "add_or_remove_items" => esc_html__( "Ajouter ou supprimer des pays", "custom-post-type-ui" ),
-            "choose_from_most_used" => esc_html__( "Choisir parmi les pays les plus utilisés", "custom-post-type-ui" ),
-            "not_found" => esc_html__( "Aucun pays trouvé", "custom-post-type-ui" ),
-            "no_terms" => esc_html__( "Aucun pays", "custom-post-type-ui" ),
-            "items_list_navigation" => esc_html__( "Navigation de liste de pays", "custom-post-type-ui" ),
-            "items_list" => esc_html__( "Liste de pays", "custom-post-type-ui" ),
-            "back_to_items" => esc_html__( "Retourner à pays", "custom-post-type-ui" ),
-            "name_field_description" => esc_html__( "Le nom tel qu’il apparaîtra sur votre site.", "custom-post-type-ui" ),
-            "parent_field_description" => esc_html__( "Assigner un terme parent pour créer une hiérarchie. Le terme « Jazz », par exemple, serait le parent de « Bebop » et « Big Band ».", "custom-post-type-ui" ),
-            "slug_field_description" => esc_html__( "Le « slug » est une version du nom compatible avec les URL. Il est généralement entièrement en minuscules et contient uniquement des lettres, chiffres et tirets.", "custom-post-type-ui" ),
-            "desc_field_description" => esc_html__( "La description n’est pas mise en évidence par défaut ; toutefois, certains thèmes peuvent l’afficher.", "custom-post-type-ui" ),
-        ];
-    
-        
-        $args = [
-            "label" => esc_html__( "pays", "custom-post-type-ui" ),
-            "labels" => $labels,
-            "public" => true,
-            "publicly_queryable" => true,
-            "hierarchical" => true,
-            "show_ui" => true,
-            "show_in_menu" => true,
-            "show_in_nav_menus" => true,
-            "query_var" => true,
-            "rewrite" => [ 'slug' => 'pays', 'with_front' => true, ],
-            "show_admin_column" => false,
-            "show_in_rest" => true,
-            "show_tagcloud" => false,
-            "rest_base" => "pays",
-            "rest_controller_class" => "WP_REST_Terms_Controller",
-            "rest_namespace" => "wp/v2",
-            "show_in_quick_edit" => false,
-            "sort" => false,
-            "show_in_graphql" => false,
-        ];
-        register_taxonomy( "pays", [ "menu_phare" ], $args );
-    }
-    add_action( 'init', 'cptui_register_my_taxes' );
-
-    function cptui_register_my_taxes_pays() {
-
-        /**
-         * Taxonomy: pays.
-         */
-    
-        $labels = [
-            "name" => esc_html__( "pays", "custom-post-type-ui" ),
-            "singular_name" => esc_html__( "pays", "custom-post-type-ui" ),
-            "menu_name" => esc_html__( "pays", "custom-post-type-ui" ),
-            "all_items" => esc_html__( "Tous les pays", "custom-post-type-ui" ),
-            "edit_item" => esc_html__( "Modifier pays", "custom-post-type-ui" ),
-            "view_item" => esc_html__( "Voir pays", "custom-post-type-ui" ),
-            "update_item" => esc_html__( "Mettre à jour le nom de pays", "custom-post-type-ui" ),
-            "add_new_item" => esc_html__( "Ajouter un nouveau pays", "custom-post-type-ui" ),
-            "new_item_name" => esc_html__( "Nom du nouveau pays", "custom-post-type-ui" ),
-            "parent_item" => esc_html__( "Parent dpays", "custom-post-type-ui" ),
-            "parent_item_colon" => esc_html__( "pays parent :", "custom-post-type-ui" ),
-            "search_items" => esc_html__( "Recherche de pays", "custom-post-type-ui" ),
-            "popular_items" => esc_html__( "pays populaires", "custom-post-type-ui" ),
-            "separate_items_with_commas" => esc_html__( "Séparer les pays avec des virgules", "custom-post-type-ui" ),
-            "add_or_remove_items" => esc_html__( "Ajouter ou supprimer des pays", "custom-post-type-ui" ),
-            "choose_from_most_used" => esc_html__( "Choisir parmi les pays les plus utilisés", "custom-post-type-ui" ),
-            "not_found" => esc_html__( "Aucun pays trouvé", "custom-post-type-ui" ),
-            "no_terms" => esc_html__( "Aucun pays", "custom-post-type-ui" ),
-            "items_list_navigation" => esc_html__( "Navigation de liste de pays", "custom-post-type-ui" ),
-            "items_list" => esc_html__( "Liste de pays", "custom-post-type-ui" ),
-            "back_to_items" => esc_html__( "Retourner à pays", "custom-post-type-ui" ),
-            "name_field_description" => esc_html__( "Le nom tel qu’il apparaîtra sur votre site.", "custom-post-type-ui" ),
-            "parent_field_description" => esc_html__( "Assigner un terme parent pour créer une hiérarchie. Le terme « Jazz », par exemple, serait le parent de « Bebop » et « Big Band ».", "custom-post-type-ui" ),
-            "slug_field_description" => esc_html__( "Le « slug » est une version du nom compatible avec les URL. Il est généralement entièrement en minuscules et contient uniquement des lettres, chiffres et tirets.", "custom-post-type-ui" ),
-            "desc_field_description" => esc_html__( "La description n’est pas mise en évidence par défaut ; toutefois, certains thèmes peuvent l’afficher.", "custom-post-type-ui" ),
-        ];
-    
-        
-        $args = [
-            "label" => esc_html__( "pays", "custom-post-type-ui" ),
-            "labels" => $labels,
-            "public" => true,
-            "publicly_queryable" => true,
-            "hierarchical" => true,
-            "show_ui" => true,
-            "show_in_menu" => true,
-            "show_in_nav_menus" => true,
-            "query_var" => true,
-            "rewrite" => [ 'slug' => 'pays', 'with_front' => true, ],
-            "show_admin_column" => false,
-            "show_in_rest" => true,
-            "show_tagcloud" => false,
-            "rest_base" => "pays",
-            "rest_controller_class" => "WP_REST_Terms_Controller",
-            "rest_namespace" => "wp/v2",
-            "show_in_quick_edit" => false,
-            "sort" => false,
-            "show_in_graphql" => false,
-        ];
-        register_taxonomy( "pays", [ "menu_phare" ], $args );
-    }
-    add_action( 'init', 'cptui_register_my_taxes_pays' );
-
-
     add_action( 'acf/include_fields', function() {
         if ( ! function_exists( 'acf_add_local_field_group' ) ) {
             return;
@@ -1003,4 +734,267 @@ add_theme_support('menus');
     ) );
     } );
     
+    function cptui_register_my_cpts() {
+
+        /**
+         * Post Type: Menus phares.
+         */
     
+        $labels = [
+            "name" => esc_html__( "Menus phares", "custom-post-type-ui" ),
+            "singular_name" => esc_html__( "Menu phare", "custom-post-type-ui" ),
+            "menu_name" => esc_html__( "Menus phares", "custom-post-type-ui" ),
+            "all_items" => esc_html__( "Tous les Menus phares", "custom-post-type-ui" ),
+            "add_new" => esc_html__( "Ajouter un nouveau", "custom-post-type-ui" ),
+            "add_new_item" => esc_html__( "Ajouter un nouveau Menu phare", "custom-post-type-ui" ),
+            "edit_item" => esc_html__( "Modifier Menu phare", "custom-post-type-ui" ),
+            "new_item" => esc_html__( "Nouveau Menu phare", "custom-post-type-ui" ),
+            "view_item" => esc_html__( "Voir Menu phare", "custom-post-type-ui" ),
+            "view_items" => esc_html__( "Voir Menus phares", "custom-post-type-ui" ),
+            "search_items" => esc_html__( "Recherche de Menus phares", "custom-post-type-ui" ),
+            "not_found" => esc_html__( "Aucun Menus phares trouvé", "custom-post-type-ui" ),
+            "not_found_in_trash" => esc_html__( "Aucun Menus phares trouvé dans la corbeille", "custom-post-type-ui" ),
+            "parent" => esc_html__( "Menu phare parent :", "custom-post-type-ui" ),
+            "featured_image" => esc_html__( "Image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
+            "set_featured_image" => esc_html__( "Définir l’image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
+            "remove_featured_image" => esc_html__( "Retirer l’image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
+            "use_featured_image" => esc_html__( "Utiliser comme image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
+            "archives" => esc_html__( "Archives de Menu phare", "custom-post-type-ui" ),
+            "insert_into_item" => esc_html__( "Insérer dans Menu phare", "custom-post-type-ui" ),
+            "uploaded_to_this_item" => esc_html__( "Téléverser sur ce Menu phare", "custom-post-type-ui" ),
+            "filter_items_list" => esc_html__( "Filtrer la liste de Menus phares", "custom-post-type-ui" ),
+            "items_list_navigation" => esc_html__( "Navigation de liste de Menus phares", "custom-post-type-ui" ),
+            "items_list" => esc_html__( "Liste de Menus phares", "custom-post-type-ui" ),
+            "attributes" => esc_html__( "Attributs de Menus phares", "custom-post-type-ui" ),
+            "name_admin_bar" => esc_html__( "Menu phare", "custom-post-type-ui" ),
+            "item_published" => esc_html__( "Menu phare publié", "custom-post-type-ui" ),
+            "item_published_privately" => esc_html__( "Menu phare publié en privé.", "custom-post-type-ui" ),
+            "item_reverted_to_draft" => esc_html__( "Menu phare repassé en brouillon.", "custom-post-type-ui" ),
+            "item_trashed" => esc_html__( "Menu phare mis à la corbeille.", "custom-post-type-ui" ),
+            "item_scheduled" => esc_html__( "Menu phare planifié", "custom-post-type-ui" ),
+            "item_updated" => esc_html__( "Menu phare mis à jour.", "custom-post-type-ui" ),
+            "parent_item_colon" => esc_html__( "Menu phare parent :", "custom-post-type-ui" ),
+        ];
+    
+        $args = [
+            "label" => esc_html__( "Menus phares", "custom-post-type-ui" ),
+            "labels" => $labels,
+            "description" => "",
+            "public" => true,
+            "publicly_queryable" => true,
+            "show_ui" => true,
+            "show_in_rest" => true,
+            "rest_base" => "",
+            "rest_controller_class" => "WP_REST_Posts_Controller",
+            "rest_namespace" => "wp/v2",
+            "has_archive" => false,
+            "show_in_menu" => true,
+            "show_in_nav_menus" => true,
+            "delete_with_user" => false,
+            "exclude_from_search" => false,
+            "capability_type" => "post",
+            "map_meta_cap" => true,
+            "hierarchical" => false,
+            "can_export" => false,
+            "rewrite" => [ "slug" => "menu_phare", "with_front" => true ],
+            "query_var" => true,
+            "supports" => [ "title" ],
+            "show_in_graphql" => false,
+        ];
+    
+        register_post_type( "menu_phare", $args );
+    }
+    
+    add_action( 'init', 'cptui_register_my_cpts' );
+    function cptui_register_my_cpts_menu_phare() {
+
+        /**
+         * Post Type: Menus phares.
+         */
+    
+        $labels = [
+            "name" => esc_html__( "Menus phares", "custom-post-type-ui" ),
+            "singular_name" => esc_html__( "Menu phare", "custom-post-type-ui" ),
+            "menu_name" => esc_html__( "Menus phares", "custom-post-type-ui" ),
+            "all_items" => esc_html__( "Tous les Menus phares", "custom-post-type-ui" ),
+            "add_new" => esc_html__( "Ajouter un nouveau", "custom-post-type-ui" ),
+            "add_new_item" => esc_html__( "Ajouter un nouveau Menu phare", "custom-post-type-ui" ),
+            "edit_item" => esc_html__( "Modifier Menu phare", "custom-post-type-ui" ),
+            "new_item" => esc_html__( "Nouveau Menu phare", "custom-post-type-ui" ),
+            "view_item" => esc_html__( "Voir Menu phare", "custom-post-type-ui" ),
+            "view_items" => esc_html__( "Voir Menus phares", "custom-post-type-ui" ),
+            "search_items" => esc_html__( "Recherche de Menus phares", "custom-post-type-ui" ),
+            "not_found" => esc_html__( "Aucun Menus phares trouvé", "custom-post-type-ui" ),
+            "not_found_in_trash" => esc_html__( "Aucun Menus phares trouvé dans la corbeille", "custom-post-type-ui" ),
+            "parent" => esc_html__( "Menu phare parent :", "custom-post-type-ui" ),
+            "featured_image" => esc_html__( "Image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
+            "set_featured_image" => esc_html__( "Définir l’image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
+            "remove_featured_image" => esc_html__( "Retirer l’image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
+            "use_featured_image" => esc_html__( "Utiliser comme image mise en avant pour ce Menu phare", "custom-post-type-ui" ),
+            "archives" => esc_html__( "Archives de Menu phare", "custom-post-type-ui" ),
+            "insert_into_item" => esc_html__( "Insérer dans Menu phare", "custom-post-type-ui" ),
+            "uploaded_to_this_item" => esc_html__( "Téléverser sur ce Menu phare", "custom-post-type-ui" ),
+            "filter_items_list" => esc_html__( "Filtrer la liste de Menus phares", "custom-post-type-ui" ),
+            "items_list_navigation" => esc_html__( "Navigation de liste de Menus phares", "custom-post-type-ui" ),
+            "items_list" => esc_html__( "Liste de Menus phares", "custom-post-type-ui" ),
+            "attributes" => esc_html__( "Attributs de Menus phares", "custom-post-type-ui" ),
+            "name_admin_bar" => esc_html__( "Menu phare", "custom-post-type-ui" ),
+            "item_published" => esc_html__( "Menu phare publié", "custom-post-type-ui" ),
+            "item_published_privately" => esc_html__( "Menu phare publié en privé.", "custom-post-type-ui" ),
+            "item_reverted_to_draft" => esc_html__( "Menu phare repassé en brouillon.", "custom-post-type-ui" ),
+            "item_trashed" => esc_html__( "Menu phare mis à la corbeille.", "custom-post-type-ui" ),
+            "item_scheduled" => esc_html__( "Menu phare planifié", "custom-post-type-ui" ),
+            "item_updated" => esc_html__( "Menu phare mis à jour.", "custom-post-type-ui" ),
+            "parent_item_colon" => esc_html__( "Menu phare parent :", "custom-post-type-ui" ),
+        ];
+    
+        $args = [
+            "label" => esc_html__( "Menus phares", "custom-post-type-ui" ),
+            "labels" => $labels,
+            "description" => "",
+            "public" => true,
+            "publicly_queryable" => true,
+            "show_ui" => true,
+            "show_in_rest" => true,
+            "rest_base" => "",
+            "rest_controller_class" => "WP_REST_Posts_Controller",
+            "rest_namespace" => "wp/v2",
+            "has_archive" => false,
+            "show_in_menu" => true,
+            "show_in_nav_menus" => true,
+            "delete_with_user" => false,
+            "exclude_from_search" => false,
+            "capability_type" => "post",
+            "map_meta_cap" => true,
+            "hierarchical" => false,
+            "can_export" => false,
+            "rewrite" => [ "slug" => "menu_phare", "with_front" => true ],
+            "query_var" => true,
+            "supports" => [ "title" ],
+            "show_in_graphql" => false,
+        ];
+    
+        register_post_type( "menu_phare", $args );
+    }
+    
+    add_action( 'init', 'cptui_register_my_cpts_menu_phare' );
+
+    function cptui_register_my_taxes() {
+
+        /**
+         * Taxonomy: pays.
+         */
+    
+        $labels = [
+            "name" => esc_html__( "pays", "custom-post-type-ui" ),
+            "singular_name" => esc_html__( "pays", "custom-post-type-ui" ),
+            "menu_name" => esc_html__( "pays", "custom-post-type-ui" ),
+            "all_items" => esc_html__( "Tous les pays", "custom-post-type-ui" ),
+            "edit_item" => esc_html__( "Modifier pays", "custom-post-type-ui" ),
+            "view_item" => esc_html__( "Voir pays", "custom-post-type-ui" ),
+            "update_item" => esc_html__( "Mettre à jour le nom de pays", "custom-post-type-ui" ),
+            "add_new_item" => esc_html__( "Ajouter un nouveau pays", "custom-post-type-ui" ),
+            "new_item_name" => esc_html__( "Nom du nouveau pays", "custom-post-type-ui" ),
+            "parent_item" => esc_html__( "Parent dpays", "custom-post-type-ui" ),
+            "parent_item_colon" => esc_html__( "pays parent :", "custom-post-type-ui" ),
+            "search_items" => esc_html__( "Recherche de pays", "custom-post-type-ui" ),
+            "popular_items" => esc_html__( "pays populaires", "custom-post-type-ui" ),
+            "separate_items_with_commas" => esc_html__( "Séparer les pays avec des virgules", "custom-post-type-ui" ),
+            "add_or_remove_items" => esc_html__( "Ajouter ou supprimer des pays", "custom-post-type-ui" ),
+            "choose_from_most_used" => esc_html__( "Choisir parmi les pays les plus utilisés", "custom-post-type-ui" ),
+            "not_found" => esc_html__( "Aucun pays trouvé", "custom-post-type-ui" ),
+            "no_terms" => esc_html__( "Aucun pays", "custom-post-type-ui" ),
+            "items_list_navigation" => esc_html__( "Navigation de liste de pays", "custom-post-type-ui" ),
+            "items_list" => esc_html__( "Liste de pays", "custom-post-type-ui" ),
+            "back_to_items" => esc_html__( "Retourner à pays", "custom-post-type-ui" ),
+            "name_field_description" => esc_html__( "Le nom tel qu’il apparaîtra sur votre site.", "custom-post-type-ui" ),
+            "parent_field_description" => esc_html__( "Assigner un terme parent pour créer une hiérarchie. Le terme « Jazz », par exemple, serait le parent de « Bebop » et « Big Band ».", "custom-post-type-ui" ),
+            "slug_field_description" => esc_html__( "Le « slug » est une version du nom compatible avec les URL. Il est généralement entièrement en minuscules et contient uniquement des lettres, chiffres et tirets.", "custom-post-type-ui" ),
+            "desc_field_description" => esc_html__( "La description n’est pas mise en évidence par défaut ; toutefois, certains thèmes peuvent l’afficher.", "custom-post-type-ui" ),
+        ];
+    
+        
+        $args = [
+            "label" => esc_html__( "pays", "custom-post-type-ui" ),
+            "labels" => $labels,
+            "public" => true,
+            "publicly_queryable" => true,
+            "hierarchical" => true,
+            "show_ui" => true,
+            "show_in_menu" => true,
+            "show_in_nav_menus" => true,
+            "query_var" => true,
+            "rewrite" => [ 'slug' => 'pays', 'with_front' => true, ],
+            "show_admin_column" => false,
+            "show_in_rest" => true,
+            "show_tagcloud" => false,
+            "rest_base" => "pays",
+            "rest_controller_class" => "WP_REST_Terms_Controller",
+            "rest_namespace" => "wp/v2",
+            "show_in_quick_edit" => false,
+            "sort" => false,
+            "show_in_graphql" => false,
+        ];
+        register_taxonomy( "pays", [ "menu_phare" ], $args );
+    }
+    add_action( 'init', 'cptui_register_my_taxes' );
+
+    function cptui_register_my_taxes_pays() {
+
+        /**
+         * Taxonomy: pays.
+         */
+    
+        $labels = [
+            "name" => esc_html__( "pays", "custom-post-type-ui" ),
+            "singular_name" => esc_html__( "pays", "custom-post-type-ui" ),
+            "menu_name" => esc_html__( "pays", "custom-post-type-ui" ),
+            "all_items" => esc_html__( "Tous les pays", "custom-post-type-ui" ),
+            "edit_item" => esc_html__( "Modifier pays", "custom-post-type-ui" ),
+            "view_item" => esc_html__( "Voir pays", "custom-post-type-ui" ),
+            "update_item" => esc_html__( "Mettre à jour le nom de pays", "custom-post-type-ui" ),
+            "add_new_item" => esc_html__( "Ajouter un nouveau pays", "custom-post-type-ui" ),
+            "new_item_name" => esc_html__( "Nom du nouveau pays", "custom-post-type-ui" ),
+            "parent_item" => esc_html__( "Parent dpays", "custom-post-type-ui" ),
+            "parent_item_colon" => esc_html__( "pays parent :", "custom-post-type-ui" ),
+            "search_items" => esc_html__( "Recherche de pays", "custom-post-type-ui" ),
+            "popular_items" => esc_html__( "pays populaires", "custom-post-type-ui" ),
+            "separate_items_with_commas" => esc_html__( "Séparer les pays avec des virgules", "custom-post-type-ui" ),
+            "add_or_remove_items" => esc_html__( "Ajouter ou supprimer des pays", "custom-post-type-ui" ),
+            "choose_from_most_used" => esc_html__( "Choisir parmi les pays les plus utilisés", "custom-post-type-ui" ),
+            "not_found" => esc_html__( "Aucun pays trouvé", "custom-post-type-ui" ),
+            "no_terms" => esc_html__( "Aucun pays", "custom-post-type-ui" ),
+            "items_list_navigation" => esc_html__( "Navigation de liste de pays", "custom-post-type-ui" ),
+            "items_list" => esc_html__( "Liste de pays", "custom-post-type-ui" ),
+            "back_to_items" => esc_html__( "Retourner à pays", "custom-post-type-ui" ),
+            "name_field_description" => esc_html__( "Le nom tel qu’il apparaîtra sur votre site.", "custom-post-type-ui" ),
+            "parent_field_description" => esc_html__( "Assigner un terme parent pour créer une hiérarchie. Le terme « Jazz », par exemple, serait le parent de « Bebop » et « Big Band ».", "custom-post-type-ui" ),
+            "slug_field_description" => esc_html__( "Le « slug » est une version du nom compatible avec les URL. Il est généralement entièrement en minuscules et contient uniquement des lettres, chiffres et tirets.", "custom-post-type-ui" ),
+            "desc_field_description" => esc_html__( "La description n’est pas mise en évidence par défaut ; toutefois, certains thèmes peuvent l’afficher.", "custom-post-type-ui" ),
+        ];
+    
+        
+        $args = [
+            "label" => esc_html__( "pays", "custom-post-type-ui" ),
+            "labels" => $labels,
+            "public" => true,
+            "publicly_queryable" => true,
+            "hierarchical" => true,
+            "show_ui" => true,
+            "show_in_menu" => true,
+            "show_in_nav_menus" => true,
+            "query_var" => true,
+            "rewrite" => [ 'slug' => 'pays', 'with_front' => true, ],
+            "show_admin_column" => false,
+            "show_in_rest" => true,
+            "show_tagcloud" => false,
+            "rest_base" => "pays",
+            "rest_controller_class" => "WP_REST_Terms_Controller",
+            "rest_namespace" => "wp/v2",
+            "show_in_quick_edit" => false,
+            "sort" => false,
+            "show_in_graphql" => false,
+        ];
+        register_taxonomy( "pays", [ "menu_phare" ], $args );
+    }
+    add_action( 'init', 'cptui_register_my_taxes_pays' );

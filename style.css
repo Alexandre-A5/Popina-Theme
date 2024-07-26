@@ -5,17 +5,17 @@ body {
   box-sizing: border-box;
 }
 
-.nav-container a {
+.nav-menu a {
   text-decoration: none;
   color: rgb(34, 34, 34);
 }
-.nav-container ul {
+.nav-menu ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin: 20px;
 }
-.nav-container ul li {
+.nav-menu ul li {
   margin: 0 8%;
   list-style-type: none;
   color: black;
